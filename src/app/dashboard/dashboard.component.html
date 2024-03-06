@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Total Headcount</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    span {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .total-count p {
+      margin: 16px auto;
+    }
+
+    .avt-img {
+      max-width: 100px;
+      width: 100%;
+
+    }
+
+    .iflex {
+      flex-wrap: nowrap;
+    }
+
+    .totals {
+      display: flex;
+      background-color: rgb(255, 255, 255);
+      padding: 20px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .dashboard-header {
+      margin-top: 20px;
+      /* margin-bottom: 5px; */
+      text-align: center;
+    }
+
+    .dashboard-header h1 {
+      font-size: 30px;
+    }
+
+    h2 {
+      font-size: 25px;
+    }
+
+    .totals img {
+      max-width: 70px;
+      width: 100%;
+    }
+
+    .circle-headcount {
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .circle-headcount {
+      color: #095F5B;
+    }
+
+    .img-in-out {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .table {
+      --bs-table-bg: rgb(231 146 127 / 30%) !important;
+    }
+
+    .sidebar {
+      flex: 1;
+      padding: 0px 50px;
+    }
+
+    /* background-color:rgb(231 146 127 / 30%) !important;} */
+  </style>
+  <!-- <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+     
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .sidebar {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .totals {
+      /* background-color: #3498db; */
+      /* color: #fff; */
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .total {
+      margin-bottom: 10px;
+      display: grid;
+    }
+
+    .total-name {
+      font-weight: bold;
+    }
+
+    .total-count {
+      background-image: url(assets/img/round.jpg);
+      background-size: contain;
+      margin-right: 10px;
+      font-size: 24px;
+      width: 60px;
+      height: 60px;
+    }
+
+    .headcount-section {
+      flex: 2;
+      padding: 20px;
+    }
+
+    .total-section {
+      margin-bottom: 20px;
+      font-size: 24px;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    h3 {
+      color: #333;
+    }
+
+    .last-people-section {
+      background-color: rgb(18 190 182 / 7%);
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+
+    .table-text {
+      text-align: center;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    p {
+      margin: 0px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .table-gap {
+      margin-top: 20px;
+    }
+
+    /* Added styles for the IN and OUT columns */
+    .in-out-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .in-out-table {
+      width: 48%;
+      /* Adjust the width as needed */
+      display: inline-block;
+    }
+
+    .center {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      padding: 4px;
+    }
+  </style> -->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+
+      </div>
+      <div class="col-6 dashboard-header" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
+        <h1> Occupancy Display/Dashboard Concept </h1>
+      </div>
+      <div class="col-3">
+        <img src="assets/img/LakmeLever.jpeg" alt="" style="width: 100%;height: fit-content;">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="sidebar col-md-3">
+
+        <div *ngFor="let functTypeKey of getFunctTypeKeys().slice(0,5)">
+          <div class="totals row align-items-center"  style="padding: 5px;"  (click)="openTablePopup(functTypeKey)">
+            <div class="col-md-4 d-flex justify-content-center align-items-center"
+              style="width: 65px; height: 65px; background-image: url('assets/img/arrow-circle-png.png'); background-size: cover; background-position: center;">
+              <div class="text-center">
+                <h1 style="font-size: 20px;margin-left: -4px;margin-top: 18px;">{{functAllCount[functTypeKey]}}</h1>
+              </div>
+            </div>
+            <div class="total col-md-8 text-center">
+              <img src="assets/img/{{ functTypeKey }}.png">
+              <p class="total-name "><b>{{functTypeKey}}</b></p>
+            </div>
+          </div>
+        </div>
+
+       
+
+        <!-- <div class="totals row align-items-center">
+          <div class="col-md-4 d-flex justify-content-center align-items-center"
+            style="width: 50px; height: 50px; background-image: url('assets/img/arrow-circle-png.png'); background-size: cover; background-position: center;">
+            <div class="text-center">
+              <h1 style="font-size: 20px;margin-left: -4px;margin-top: 8px;">10</h1>
+            </div>
+          </div>
+          <div class="total col-md-8 text-center">
+            <img src="assets/img/first-responder.png">
+            <p class="total-name "><b>First Responder</b></p>
+          </div>
+        </div>
+        <div class="totals row align-items-center">
+          <div class="col-md-4 d-flex justify-content-center align-items-center"
+            style="width: 50px; height: 50px; background-image: url('assets/img/arrow-circle-png.png'); background-size: cover; background-position: center;">
+            <div class="text-center">
+              <h1 style="font-size: 20px;margin-left: -4px;margin-top: 8px;">10</h1>
+            </div>
+          </div>
+          <div class="total col-md-8 text-center">
+            <img src="assets/img/Current-Incident.png">
+            <p class="total-name"><b>Current Incident controller</b></p>
+          </div>
+        </div>
+        <div class="totals row align-items-center">
+          <div class="col-md-4 d-flex justify-content-center align-items-center"
+            style="width: 50px; height: 50px; background-image: url('assets/img/arrow-circle-png.png'); background-size: cover; background-position: center;">
+            <div class="text-center">
+              <h1 style="font-size: 20px;margin-left: -4px;margin-top: 8px;">10</h1>
+            </div>
+          </div>
+          <div class="total col-md-8 text-center">
+            <img src="assets/img/Emergency.png">
+            <p class="total-name"><b>Emergency controller</b></p>
+          </div>
+        </div> -->
+      </div>
+
+
+      <div class="headcount-section col-md-6">
+        <div class="container mt-4 rounded card my-4">
+
+          <div class="circle-headcount">
+            <h2>{{this.areaTypeName}}</h2>
+            <div class="img-in-out row">
+              <div class="d-flex col">
+                <img src="assets/img/Picture2.png" width="100px" height="100px">
+              </div>
+              <div class="col d-flex justify-content-center align-items-center"
+                style="width: 70px; height: 70px; background-image: url('assets/img/arrow-circle-png.png'); background-size: cover; background-position: center;">
+                <div class="text-center">
+                  <h1 style="font-size: 20px;margin-left: -4px;margin-top: 15px;">{{totalHeadcount}}</h1>
+                </div>
+              </div>
+
+            </div>
+            <h2>TOTAL HEADCOUNT</h2>
+
+          </div>
+        </div>
+        <!-- IN and OUT columns next to each other with a gap between them -->
+        <div class="container card my-4 " style="background-color: #EAF9F8;">
+          <div class="row text-center">
+            <div class="col-md-12 card-header">
+              <h2>
+                <p><b>Last 5 People </b></p>
+              </h2>
+              <div style="padding: 0px 100px; mix-blend-mode:multiply">
+                <img src="assets/img/inout.png" style="width: 100%; max-width: 400px;">
+              </div>
+            </div>
+            <div class="card-body col-12 ">
+              <div class="row">
+                <div class="col-6">
+                  <table class="table table-striped">
+                    <tbody>
+                      <tr>
+                        <th style="background-color: orange;">Name</th>
+                        <th style="background-color: orange;">Time</th>
+                        <!-- Add more columns if needed -->
+                      </tr>
+                      <tr *ngFor="let person of inData">
+                        <td>{{ person.Name }}</td>
+                        <td>{{ person.Time | date:'HH:mm':'UTC' }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+                <div class="col-6">
+                  <table class="table table-striped rounded">
+                    <tbody>
+                      <tr>
+                        <th style="background-color: orange;">Name</th>
+                        <th style="background-color: orange;">Time</th>
+                        <!-- Add more columns if needed -->
+                      </tr>
+                      <tr *ngFor="let person of outData">
+                        <td>{{ person.Name }}</td>
+                        <td>{{ person.Time | date:'HH:mm':'UTC'}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="sidebar col-md-3">
+        <div *ngFor="let functTypeKey of getFunctTypeKeys().slice(5)">
+          <div class="totals row align-items-center"  style="padding: 5px;" (click)="openTablePopup(functTypeKey)">
+            <div class="total col-md-8 text-center">
+              <img src="assets/img/{{ functTypeKey }}.png">
+              <p class="total-name "><b> {{functTypeKey}} </b></p>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center align-items-center"
+              style="width: 65px; height: 65px; background-image: url('assets/img/arrow-circle-png.png'); background-size: cover; background-position: center;">
+              <div class="text-center">
+                <h1 style="font-size: 20px;margin-left: -4px;margin-top: 15px;">{{functAllCount[functTypeKey]}}</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="mt-0 p-2 bg-white text-center " style="display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;">
+    <p>Powered by</p>
+    <img src="assets/img/Picture10.png" alt="" style="mix-blend-mode:multiply">
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+/* styles.css (or your custom styles file) */
+
+.custom-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  text-align: center; /* Center text in the card */
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+}
+
+.dark-blue {
+  background-color: #34495E;
+  color: #FFFFFF;
+}
+
+.red {
+  background-color: #E74C3C;
+  color: #FFFFFF;
+}
+
+.green {
+  background-color: #008000;
+  color: #FFFFFF;
+}
+
+.purple {
+  background-color: #800080;
+  color: #FFFFFF;
+}
+
+.blue {
+  background-color: #ff00ff;
+  color: #FFFFFF;
+}
+
+.text-light {
+  color: #FFFFFF;
+  height: 2px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center text horizontally */
+  justify-content: center; /* Center text vertically */
+}
+
+.image-container {
+  margin-right: 330px; /* Adjust the margin as needed */
+  margin-top: -55px;
+ 
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-img {
+  width: 65px;
+  height: auto;
+}
+
+.wider-card {
+  width: 500px; /* Adjust the width for responsiveness */
+  height: 150px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.flex-item {
+  margin-bottom: 10px;
+}
+
+.circle-tile-description {
+  font-size: 22px;
+  /* margin-bottom: 5px; Adjust the margin between title and count */
+}
+
+.circle-tile-number {
+  font-size: 24px;
+}
+
+.count-wrapper {
+  margin-top: 20px; /* Add a margin to create space between text and number */
+}
