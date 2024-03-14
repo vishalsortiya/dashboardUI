@@ -94,7 +94,8 @@ export class HomeComponent implements OnInit {
   // }
 
   fetchAllCounts() {
-    this.http.get<{ [key: string]: number }>('http://localhost:3000/emp').subscribe(
+    this.http.get<{ [key: string]: number }>('http://dashboard.dnvsspl.com:3000/emp').subscribe(
+      // this.http.get<{ [key: string]: number }>('http://localhost:3000/emp').subscribe(
       (countsForAllAreas) => {
         this.areaTypeCounts = countsForAllAreas;
         this.loading = false; // Set loading to false once data is fetched

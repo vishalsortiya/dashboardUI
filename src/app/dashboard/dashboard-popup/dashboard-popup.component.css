@@ -1,87 +1,127 @@
+/* Common styles */
 
 h2 {
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.mat-form-field {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.mat-table {
+  width: 60%;
+  height: 60%;
+}
+
+.mat-header-cell,
+.mat-cell {
+  padding: 10px;
+  text-align: left;
+}
+
+.mat-row {
+  background-color: #f5f5f5;
+}
+
+.mat-paginator {
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 20px;
+}
+
+/* Custom styling for Cancel button */
+button.mat-stroked-button {
+  margin-right: 10px;
+}
+
+/* Apply hover effect on the Cancel button */
+button.mat-stroked-button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Apply a subtle box shadow to the table for elevation effect */
+.mat-elevation-z8 {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Add some spacing and alignment adjustments for better visual appeal */
+.col-md-9 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Optional: Style the search input for better visibility */
+.mat-form-field input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Optional: Adjust table header styling for better readability */
+.mat-header-cell {
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Optional: Style paginator buttons */
+button.mat-paginator-navigation-previous,
+button.mat-paginator-navigation-next,
+button.mat-paginator-navigation-first,
+button.mat-paginator-navigation-last {
+  background-color: #007bff;
+  color: #fff;
+}
+
+button.mat-paginator-navigation-previous:hover,
+button.mat-paginator-navigation-next:hover,
+button.mat-paginator-navigation-first:hover,
+button.mat-paginator-navigation-last:hover {
+  background-color: #0056b3;
+}
+
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 480px) {
+  h2 {
+    font-size: 1em; /* Further reduced font size for smaller screens */
+    margin-bottom: 8px; /* Further reduced margin for better spacing on smaller screens */
   }
-  
+
   .mat-form-field {
-    margin-bottom: 20px;
-    width: 100%;
+    margin-bottom: 8px; /* Further reduced margin for better spacing on smaller screens */
   }
-  
+
   .mat-table {
-    width: 60%;
-    height: 60%;
+    height: 70vh; /* Adjusted viewport height for better responsiveness on smaller screens */
   }
-  
+
   .mat-header-cell,
   .mat-cell {
-    padding: 10px;
-    text-align: left;
+    padding: 6px; /* Further reduced padding for better spacing on smaller screens */
   }
-  
-  .mat-row {
-    background-color: #f5f5f5;
-  }
-  
+
   .mat-paginator {
-    margin-top: 20px;
+    margin-top: 8px; /* Further reduced margin for better spacing on smaller screens */
   }
-  
+
   button {
-    margin-top: 20px;
+    margin-top: 8px; /* Further reduced margin for better spacing on smaller screens */
   }
-  
+
   /* Custom styling for Cancel button */
   button.mat-stroked-button {
-    margin-right: 10px;
+    margin-right: 6px; /* Further reduced margin for better spacing on smaller screens */
   }
-  
-  /* Apply hover effect on the Cancel button */
-  button.mat-stroked-button:hover {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  /* Apply a subtle box shadow to the table for elevation effect */
-  .mat-elevation-z8 {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Optional: Add some spacing and alignment adjustments for better visual appeal */
-  .col-md-9 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+
   /* Optional: Style the search input for better visibility */
   .mat-form-field input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 6px; /* Further reduced padding for better spacing on smaller screens */
   }
-  
-  /* Optional: Adjust table header styling for better readability */
-  .mat-header-cell {
-    font-weight: bold;
-    border-bottom: 2px solid #ddd;
-  }
-  
-  /* Optional: Style paginator buttons */
-  button.mat-paginator-navigation-previous,
-  button.mat-paginator-navigation-next,
-  button.mat-paginator-navigation-first,
-  button.mat-paginator-navigation-last {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  button.mat-paginator-navigation-previous:hover,
-  button.mat-paginator-navigation-next:hover,
-  button.mat-paginator-navigation-first:hover,
-  button.mat-paginator-navigation-last:hover {
-    background-color: #0056b3;
-  }
-  
+}

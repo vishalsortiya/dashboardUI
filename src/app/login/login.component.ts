@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient , HttpClientModule} from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -26,14 +26,23 @@ export class LoginComponent {
   password: string = "";
   hide: boolean = true;  // Declare the 'hide' property
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private http: HttpClient) { }
 
   login(): void {
-    if (this.username == '12' && this.password == '12') {
-      this.router.navigate(["home"]);
-    } else {
-      alert("Invalid credentials");
-    }
+   this.http.get('assets/users.json').subscribe((data:any) => {
+    const users = data.users;
+
+    const validUser= users.find(
+      (user: any) => user.username === this.username && user.password === this.password 
+      );
+
+      if(validUser){
+        this.router.navigate(['home']);
+      } else{
+        this.loginValid = false;
+        alert('Invalid credentials');
+      }
+   });
   }
 }
 

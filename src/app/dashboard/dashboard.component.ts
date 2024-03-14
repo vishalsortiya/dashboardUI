@@ -171,13 +171,18 @@ export class DashboardComponent implements OnInit {
 
   // New method to open the pop-up
   openTablePopup(functTypeKey: string): void {
+    const isMobile = window.innerWidth < 1000; // Adjust the breakpoint as needed
+  
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '50%';
-    dialogConfig.height = '80%';
+    dialogConfig.width = isMobile ? '90%' : '40%'; // Adjust the width for mobile devices
+    dialogConfig.maxWidth = '90vw'; // Set maximum width to 90 viewport width
+    dialogConfig.height = isMobile ? '90%' : '80%'; // Adjust the height for mobile devices
+    dialogConfig.maxHeight = '90vh'; // Set maximum height to 90 viewport height
     dialogConfig.data = { functTypeKey, functTypeList: this.functTypeList };
-
+  
     this.dialog.open(DashboardPopupComponent, dialogConfig);
   }
+  
 
   applyFilter(filterValue: string): void {
     this.dataSource.filter = filterValue.trim().toLowerCase();

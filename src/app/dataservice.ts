@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'http://dashboard.dnvsspl.com:3000';
+  // private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
