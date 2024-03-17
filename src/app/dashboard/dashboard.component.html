@@ -13,39 +13,32 @@
 
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-3">
 
-      </div>
-      <div class="col-6 dashboard-header" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
-        <h1> Occupancy Display </h1>
-      </div>
-      <div class="col-3">
-        <img src="assets/img/LakmeLever.jpeg" alt="" style="width: 100%;height: fit-content;">
-      </div>
-    </div>
-  </div>
+
   <div class="container">
     <div class="row">
-      <div class="sidebar col-md-3">
+      <div class="left-sidebar col-md-3">
 
         <div *ngFor="let functTypeKey of getFunctTypeKeys().slice(0,5)">
-          <div class="totals row align-items-center"  style="padding: 5px;"  (click)="openTablePopup(functTypeKey)">
-            <div class="col-md-4 d-flex justify-content-center align-items-center"
-              style="width: 65px; height: 65px; background-image: url('assets/img/arrow-circle-png.png'); background-size: cover; background-position: center;">
+
+          <div class="row">
+            <div class="col-md-3 d-flex justify-content-center align-items-center"
+              (click)="openTablePopup(functTypeKey)"
+              style="width: 110px; height: 110px; background-image: url('assets/img/arrow-cricle.png'); background-size: cover; background-position: center;">
               <div class="text-center">
                 <h1 style="font-size: 20px;margin-left: -4px;margin-top: 18px;">{{functAllCount[functTypeKey]}}</h1>
+                <!-- <h1 style="font-size: 20px;margin-left: -4px;margin-top: 18px;">4000</h1> -->
               </div>
             </div>
-            <div class="total col-md-8 text-center">
-              <img src="assets/img/{{ functTypeKey }}.png">
-              <p class="total-name "><b>{{functTypeKey}}</b></p>
+
+            <div class="totals row align-items-center col-md-6" (click)="openTablePopup(functTypeKey)">
+              <div>
+                <img src="assets/img/{{ functTypeKey }}.png">
+                <div class="total-name "><b>{{functTypeKey}}</b></div>
+              </div>
             </div>
           </div>
         </div>
-
-       
 
         <!-- <div class="totals row align-items-center">
           <div class="col-md-4 d-flex justify-content-center align-items-center"
@@ -86,34 +79,50 @@
       </div>
 
 
-      <div class="headcount-section col-md-6">
-        <div class="container mt-4 rounded card my-4">
+      <div class="headcount-section col-md-7">
+        <!-- <div class="container mt-4 rounded card my-4"> -->
 
-          <div class="circle-headcount">
-            <h2>{{this.areaTypeName}}</h2>
-            <div class="img-in-out row">
-              <div class="d-flex col">
-                <img src="assets/img/Picture2.png" width="100px" height="100px">
-              </div>
-              <div class="col d-flex justify-content-center align-items-center"
-                style="width: 70px; height: 70px; background-image: url('assets/img/arrow-circle-png.png'); background-size: cover; background-position: center;">
-                <div class="text-center">
-                  <h1 style="font-size: 20px;margin-left: -4px;margin-top: 15px;">{{totalHeadcount}}</h1>
-                </div>
-              </div>
-
-            </div>
-            <h2>TOTAL HEADCOUNT</h2>
-
+        <!-- <div class="container"> -->
+        <div class="row align-items-center">
+          <!-- <div class="col-2"></div> -->
+          <div class="col-8 dashboard-header d-flex align-items-center justify-content-center"
+            style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            <div style="font-weight: 1000; font-size: 40px; color: gray;">OCCUPANCY DISPLAY</div>
+            <div style="font-weight: 800; font-size: 30px; color: gray; margin-left: 10px;">for</div>
+          </div>
+          <div class="col-4 d-flex align-items-center" style="padding-left: 10px;">
+            <img src="assets/img/LakmeLever.jpeg" alt="" style="max-width: 100%; height: auto;">
           </div>
         </div>
+        <!-- </div> -->
+
+        <div class="circle-headcount">
+
+          <div class="img-in-out row">
+            <div class="d-flex col">
+              <img src="assets/img/Picture3.png" width="120px" height="120px">
+            </div>
+            <div class="col d-flex justify-content-center align-items-center"
+              style="width: 150px; height: 150px; background-image: url('assets/img/arrow-cricle.png'); background-size: cover; background-position: center;">
+              <div class="text-center">
+                <h1 style="font-size: 20px;margin-left: -4px;margin-top: 15px;">{{totalHeadcount}}</h1>
+              </div>
+            </div>
+
+          </div>
+          <div style="font-weight: 1000; font-size: 40px; color: black;">TOTAL HEADCOUNT</div>
+          <div style="font-weight: 800; font-size: 35px; color: black;">{{this.areaTypeName}}</div>
+
+
+        </div>
+        <!-- </div> -->
         <!-- IN and OUT columns next to each other with a gap between them -->
-        <div class="container card my-4 " style="background-color: #EAF9F8;">
+        <!-- <div class="container card my-4 " style="background-color: #EAF9F8;"> -->
+        <div class="container card">
           <div class="row text-center">
-            <div class="col-md-12 card-header">
-              <h2>
-                <p><b>Last 5 People </b></p>
-              </h2>
+            <!-- <div class="col-md-12 card-header"> -->
+            <div class="col-md-12">
+              <div style="font-weight: 500; font-size: 30px; color: black;">Last 5 People</div>
               <div style="padding: 0px 100px; mix-blend-mode:multiply">
                 <img src="assets/img/inout.png" style="width: 100%; max-width: 400px;">
               </div>
@@ -160,19 +169,25 @@
         </div>
       </div>
 
-      <div class="sidebar col-md-3">
+      <div class="right-sidebar col-md-3">
+
         <div *ngFor="let functTypeKey of getFunctTypeKeys().slice(5)">
-          <div class="totals row align-items-center"  style="padding: 5px;" (click)="openTablePopup(functTypeKey)">
-            <div class="total col-md-8 text-center">
-              <img src="assets/img/{{ functTypeKey }}.png">
-              <p class="total-name "><b> {{functTypeKey}} </b></p>
+          <div class="row">
+            <div class="totals row align-items-center col-md-6" (click)="openTablePopup(functTypeKey)">
+              <div>
+                <img src="assets/img/{{ functTypeKey }}.png">
+                <div class="total-name "><b>{{functTypeKey}}</b></div>
+              </div>
             </div>
+
             <div class="col-md-4 d-flex justify-content-center align-items-center"
-              style="width: 65px; height: 65px; background-image: url('assets/img/arrow-circle-png.png'); background-size: cover; background-position: center;">
-              <div class="text-center">
+              (click)="openTablePopup(functTypeKey)"
+              style="width: 110px; height: 110px; background-image: url('assets/img/arrow-cricle.png'); background-size: cover; background-position: center;">
+                <div class="text-center">
                 <h1 style="font-size: 20px;margin-left: -4px;margin-top: 15px;">{{functAllCount[functTypeKey]}}</h1>
               </div>
             </div>
+
           </div>
         </div>
 

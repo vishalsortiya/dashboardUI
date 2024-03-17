@@ -13,7 +13,6 @@ span {
 .avt-img {
   max-width: 100px;
   width: 100%;
-
 }
 
 .iflex {
@@ -23,21 +22,28 @@ span {
 .totals {
   display: flex;
   background-color: rgb(255, 255, 255);
-  padding: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
 
+.card {
+  border-color: black;
+  border-width: 3px; /* Adjust the thickness as needed */
+  border-style: solid; /* Ensures the border is a solid line */
+}
+
 .dashboard-header {
   margin-top: 20px;
-  /* margin-bottom: 5px; */
+  margin-bottom: 10px;
   text-align: center;
+  padding-left: 55px;
 }
 
 .dashboard-header h1 {
@@ -49,7 +55,7 @@ h2 {
 }
 
 .totals img {
-  max-width: 70px;
+  max-width: 80px;
   width: 100%;
 }
 
@@ -77,9 +83,16 @@ h2 {
   --bs-table-bg: rgb(231 146 127 / 30%) !important;
 }
 
-.sidebar {
+.left-sidebar {
+  flex: 1;
+  padding: 0px 30px;
+  /* padding-left: 10px; */
+}
+
+.right-sidebar {
   flex: 1;
   padding: 0px 50px;
+  /* padding-right: 50px; */
 }
 
 /* background-color:rgb(231 146 127 / 30%) !important;} */

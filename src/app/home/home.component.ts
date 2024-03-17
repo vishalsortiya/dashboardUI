@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { interval, Subscription } from 'rxjs';
 import { WebSocketService } from '../services/web-socket.service';
 import { SharedDataService } from '../services/shared-data.service';
+import { DataService } from '../dataservice';
 
 // const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
@@ -16,8 +17,8 @@ import { SharedDataService } from '../services/shared-data.service';
   standalone: true,
   imports: [MatIconModule, MatCardModule, HttpClientModule, CommonModule],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
-  // providers:[WrappedSocket]
+  styleUrls: ['./home.component.css'],
+  providers: [DataService]
 })
 export class HomeComponent implements OnInit {
   message: string = '';  receivedMessage: string = '';  empData: any;  empDataError: any;   pollingInterval = 600;  pollingSubscription: Subscription = null!;
@@ -39,7 +40,7 @@ export class HomeComponent implements OnInit {
 
 
 
-  constructor(private router: Router, private http: HttpClient,  //private webSocketService: WebSocketService,
+  constructor(private router: Router, private http: HttpClient, private dataservice: DataService,  //private webSocketService: WebSocketService,
     private sharedDataService: SharedDataService) {}
 
   // ngOnInit() {
@@ -94,8 +95,8 @@ export class HomeComponent implements OnInit {
   // }
 
   fetchAllCounts() {
-    this.http.get<{ [key: string]: number }>('http://dashboard.dnvsspl.com:3000/emp').subscribe(
-      // this.http.get<{ [key: string]: number }>('http://localhost:3000/emp').subscribe(
+    // this.http.get<{ [key: string]: number }>('http://dashboard.dnvsspl.com:3000/emp').subscribe(
+      this.dataservice.getAllAreas().subscribe(
       (countsForAllAreas) => {
         this.areaTypeCounts = countsForAllAreas;
         this.loading = false; // Set loading to false once data is fetched

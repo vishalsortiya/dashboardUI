@@ -13,6 +13,10 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
+  
+  getAllAreas(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/emp`);
+  }
 
   getTotalHeadcount(pageName: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/totalheadcount/${pageName}`);
