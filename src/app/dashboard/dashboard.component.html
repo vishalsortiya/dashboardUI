@@ -12,7 +12,7 @@
 </head>
 
 
-<body>
+<body style="padding-right: 140px;">
 
 
   <div class="container">
@@ -21,14 +21,14 @@
 
         <div *ngFor="let functTypeKey of getFunctTypeKeys().slice(0,5)">
 
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-md-3 d-flex justify-content-center align-items-center"
               (click)="openTablePopup(functTypeKey)"
               style="width: 110px; height: 110px; background-image: url('assets/img/arrow-cricle.png'); background-size: cover; background-position: center;">
               <div class="text-center">
                 <h1 style="font-size: 20px;margin-left: -4px;margin-top: 18px;">{{functAllCount[functTypeKey]}}</h1>
                 <!-- <h1 style="font-size: 20px;margin-left: -4px;margin-top: 18px;">4000</h1> -->
-              </div>
+            <!--  </div>
             </div>
 
             <div class="totals row align-items-center col-md-6" (click)="openTablePopup(functTypeKey)">
@@ -37,6 +37,19 @@
                 <div class="total-name "><b>{{functTypeKey}}</b></div>
               </div>
             </div>
+          </div> -->
+
+            <div class="totals row align-items-center"  style="padding: 10px;"  (click)="openTablePopup(functTypeKey)">
+              <div class="col-md-5 d-flex justify-content-center align-items-center"
+                style="width: 110px; height: 110px; background-image: url('assets/img/arrow-cricle.png'); background-size: cover; background-position: center;">
+                <div class="text-center">
+                  <h1 style="font-size: 20px;margin-left: -4px;margin-top: 18px;">{{functAllCount[functTypeKey]}}</h1>
+                </div>
+              </div>
+              <div class="total col-md-6 text-center">
+                <img src="assets/img/{{ functTypeKey }}.png">
+                <p class="total-name "><b>{{functTypeKey}}</b></p>
+              </div>
           </div>
         </div>
 
@@ -110,9 +123,13 @@
             </div>
 
           </div>
-          <div style="font-weight: 1000; font-size: 40px; color: black;">TOTAL HEADCOUNT</div>
-          <div style="font-weight: 800; font-size: 35px; color: black;">{{this.areaTypeName}}</div>
-
+          <div style="font-weight: 800; font-size: 40px; color: black;">TOTAL HEADCOUNT</div>
+          <div class="row">
+            <div class="col-md-12">
+            <div style="font-weight: 800; font-size: 30px; color: gray; margin-right: 20px; display: inline-block;">for</div>
+            <div style="font-weight: 650; font-size: 35px; color: black; display: inline-block;">{{this.areaTypeName}}</div>
+          </div></div>
+          
 
         </div>
         <!-- </div> -->
@@ -169,10 +186,11 @@
         </div>
       </div>
 
-      <div class="right-sidebar col-md-3">
+      <div class="right-sidebar col-md-3" style="    padding-right: 0px;
+      margin-right: -130px;">
 
         <div *ngFor="let functTypeKey of getFunctTypeKeys().slice(5)">
-          <div class="row">
+          <!-- <div class="row">
             <div class="totals row align-items-center col-md-6" (click)="openTablePopup(functTypeKey)">
               <div>
                 <img src="assets/img/{{ functTypeKey }}.png">
@@ -188,7 +206,21 @@
               </div>
             </div>
 
+          </div> -->
+          
+          <div class="totals row align-items-center"  style="padding: 5px;" (click)="openTablePopup(functTypeKey)">
+            <div class="total col-md-4 text-center">
+              <img src="assets/img/{{ functTypeKey }}.png">
+              <p class="total-name "><b> {{functTypeKey}} </b></p>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center align-items-center"
+              style="width: 110px; height: 110px; background-image: url('assets/img/arrow-cricle.png'); background-size: cover; background-position: center;">
+              <div class="text-center">
+                <h1 style="font-size: 20px;margin-left: -4px;margin-top: 15px;">{{functAllCount[functTypeKey]}}</h1>
+              </div>
+            </div>
           </div>
+
         </div>
 
 
@@ -198,7 +230,7 @@
   <div class="mt-0 p-2 bg-white text-center " style="display: flex;
   justify-content: center;
   flex-wrap: nowrap;
-  flex-direction: column;
+  flex-direction: column; margin-left: 200px;
   align-items: center;">
     <p>Powered by</p>
     <img src="assets/img/Picture10.png" alt="" style="mix-blend-mode:multiply">
