@@ -4,24 +4,26 @@
 <head>
   <title>Total Headcount</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dashboard.component.css"> <!-- Link to your dashboard.css file -->
+  <!-- <link rel="stylesheet" href="dashboard.component.css"> -->
+  <!-- Link to your dashboard.css file -->
 </head>
 
 
-<body style="padding-right: 140px;">
+<body>
 
+  <div id="my-div">
 
-  <div class="container">
-    <div class="row">
-      <div class="left-sidebar col-md-3">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="left-sidebar col-md-3">
 
-        <div *ngFor="let functTypeKey of getFunctTypeKeys().slice(0,5)">
+          <div *ngFor="let functTypeKey of getFunctTypeKeys().slice(0,5)">
 
-          <!-- <div class="row">
+            <!-- <div class="row">
             <div class="col-md-3 d-flex justify-content-center align-items-center"
               (click)="openTablePopup(functTypeKey)"
               style="width: 110px; height: 110px; background-image: url('assets/img/arrow-cricle.png'); background-size: cover; background-position: center;">
@@ -39,21 +41,22 @@
             </div>
           </div> -->
 
-            <div class="totals row align-items-center"  style="padding: 10px;"  (click)="openTablePopup(functTypeKey)">
-              <div class="col-md-5 d-flex justify-content-center align-items-center"
-                style="width: 110px; height: 110px; background-image: url('assets/img/arrow-cricle.png'); background-size: cover; background-position: center;">
+            <div class="totals row align-items-center" style="width: 240px;" (click)="openTablePopup(functTypeKey)">
+              <div class="col-md-3 d-flex justify-content-center align-items-center"
+                style="width: 90px; height: 90px; background-image: url('assets/img/arrow-cricle.png'); background-size: cover; background-position: center;">
                 <div class="text-center">
-                  <h1 style="font-size: 20px;margin-left: -4px;margin-top: 18px;">{{functAllCount[functTypeKey]}}</h1>
+                  <h1 style="font-size: 20px;margin-left: -4px;margin-top: 18px;color: #0D0D0D;">
+                    {{functAllCount[functTypeKey]}}</h1>
                 </div>
               </div>
-              <div class="total col-md-6 text-center">
-                <img src="assets/img/{{ functTypeKey }}.png">
-                <p class="total-name "><b>{{functTypeKey}}</b></p>
+              <div class="col-md-3 text-center">
+                <img src="assets/img/{{ functTypeKey }}.png">     
+                <p><b> {{functTypeKey}} </b></p>        
               </div>
+            </div>           
           </div>
-        </div>
 
-        <!-- <div class="totals row align-items-center">
+          <!-- <div class="totals row align-items-center">
           <div class="col-md-4 d-flex justify-content-center align-items-center"
             style="width: 50px; height: 50px; background-image: url('assets/img/arrow-circle-png.png'); background-size: cover; background-position: center;">
             <div class="text-center">
@@ -89,108 +92,125 @@
             <p class="total-name"><b>Emergency controller</b></p>
           </div>
         </div> -->
-      </div>
-
-
-      <div class="headcount-section col-md-7">
-        <!-- <div class="container mt-4 rounded card my-4"> -->
-
-        <!-- <div class="container"> -->
-        <div class="row align-items-center">
-          <!-- <div class="col-2"></div> -->
-          <div class="col-8 dashboard-header d-flex align-items-center justify-content-center"
-            style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-            <div style="font-weight: 1000; font-size: 40px; color: gray;">OCCUPANCY DISPLAY</div>
-            <div style="font-weight: 800; font-size: 30px; color: gray; margin-left: 10px;">for</div>
-          </div>
-          <div class="col-4 d-flex align-items-center" style="padding-left: 10px;">
-            <img src="assets/img/LakmeLever.jpeg" alt="" style="max-width: 100%; height: auto;">
-          </div>
         </div>
-        <!-- </div> -->
 
-        <div class="circle-headcount">
 
-          <div class="img-in-out row">
-            <div class="d-flex col">
-              <img src="assets/img/Picture3.png" width="120px" height="120px">
+        <div class="headcount-section col-md-6">
+          <!-- <div class="container mt-4 rounded card my-4"> -->
+
+          <!-- <div class="container"> -->
+          <div class="row align-items-center">
+            <!-- <div class="col-2"></div> -->
+            <div class="col-6 dashboard-header d-flex align-items-center justify-content-center"
+              style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+              <div style="font-weight: 900; font-size: 25px; color: #095F5B;">OCCUPANCY DISPLAY for</div>
+              <!-- <div style="font-weight: 800; font-size: 30px; color: gray; margin-left: 10px;">for</div> -->
             </div>
-            <div class="col d-flex justify-content-center align-items-center"
-              style="width: 150px; height: 150px; background-image: url('assets/img/arrow-cricle.png'); background-size: cover; background-position: center;">
-              <div class="text-center">
-                <h1 style="font-size: 20px;margin-left: -4px;margin-top: 15px;">{{totalHeadcount}}</h1>
+            <div class="col-2 d-flex align-items-center">
+              <img src="assets/img/LakmeLever.jpeg" alt="" style="max-width: 270px; height: auto;">
+            </div>
+          </div>
+          <!-- </div> -->
+
+          <div class="circle-headcount">
+
+            <div class="img-in-out row">
+
+              <div class="col d-flex justify-content-center align-items-center"
+                style="width: 120px; height: 120px; background-image: url('assets/img/arrow-cricle.png'); background-size: cover; background-position: center;">
+                <div class="text-center">
+                  <h1 style="font-size: 27px; font-weight: 800; margin-left: -4px;margin-top: 15px;">{{totalHeadcount}}
+                  </h1>
+                </div>
+              </div>
+              <div class="d-flex col">
+                <img src="assets/img/Picture4.png" width="120px" height="120px">
               </div>
             </div>
+            <div style="display: flex; align-items: center;padding-left: 50px; height: 45px;">
+              <p style="font-weight: 700; font-size: 30px; color: #095F5B;">Total</p>
+              <p style="font-weight: 400; font-size: 30px; color: #095F5B; margin-left: 10px; margin-right: 20px;">
+                HEADCOUNT</p>
+            </div>
 
-          </div>
-          <div style="font-weight: 800; font-size: 40px; color: black;">TOTAL HEADCOUNT</div>
-          <div class="row">
-            <div class="col-md-12">
-            <div style="font-weight: 800; font-size: 30px; color: gray; margin-right: 20px; display: inline-block;">for</div>
-            <div style="font-weight: 650; font-size: 35px; color: black; display: inline-block;">{{this.areaTypeName}}</div>
-          </div></div>
+              <div class="col-md-12 text-center">
+                <p style="font-weight: 400; font-size: 20px; color: #095F5B; margin-right: 5px; display: inline-block;">
+                  (For</p>
+                <p style="font-weight: 650; font-size: 25px; color: #095F5B; display: inline-block;">
+                  {{this.areaTypeName}})</p>
+              </div>
           
 
-        </div>
-        <!-- </div> -->
-        <!-- IN and OUT columns next to each other with a gap between them -->
-        <!-- <div class="container card my-4 " style="background-color: #EAF9F8;"> -->
-        <div class="container card">
-          <div class="row text-center">
-            <!-- <div class="col-md-12 card-header"> -->
-            <div class="col-md-12">
-              <div style="font-weight: 500; font-size: 30px; color: black;">Last 5 People</div>
-              <div style="padding: 0px 100px; mix-blend-mode:multiply">
-                <img src="assets/img/inout.png" style="width: 100%; max-width: 400px;">
-              </div>
-            </div>
-            <div class="card-body col-12 ">
-              <div class="row">
-                <div class="col-6">
-                  <table class="table table-striped">
-                    <tbody>
-                      <tr>
-                        <th style="background-color: orange;">Name</th>
-                        <th style="background-color: orange;">Time</th>
-                        <!-- Add more columns if needed -->
-                      </tr>
-                      <tr *ngFor="let person of inData">
-                        <td>{{ person.Name }}</td>
-                        <td>{{ person.Time | date:'HH:mm':'UTC' }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
 
+          </div>
+          <!-- </div> -->
+          <!-- IN and OUT columns next to each other with a gap between them -->
+          <!-- <div class="container card my-4 " style="background-color: #EAF9F8;"> -->
+          <div class="container card">
+            <div class="row text-center">
+              <!-- <div class="col-md-12 card-header"> -->
+              <div class="col-md-12">
+                <div style="font-weight: 500; font-size: 25px; color: #136562;">Last 5 People</div>
+                <div style="padding: -10px 100px; mix-blend-mode:multiply">
+                  <img src="assets/img/inout.png" style="width: 300px;">
                 </div>
-                <div class="col-6">
-                  <table class="table table-striped rounded">
-                    <tbody>
-                      <tr>
-                        <th style="background-color: orange;">Name</th>
-                        <th style="background-color: orange;">Time</th>
-                        <!-- Add more columns if needed -->
-                      </tr>
-                      <tr *ngFor="let person of outData">
-                        <td>{{ person.Name }}</td>
-                        <td>{{ person.Time | date:'HH:mm':'UTC'}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
+              </div>
+              <div class="card-body col-12">
+                <div class="row">
+                  <div class="col-6">
+                    <table class="table table-striped">
+                      <tbody>
+                        <tr>
+                          <th style="background-color: orange;">Name</th>
+                          <th style="background-color: orange;">Time</th>
+                          <!-- Add more columns if needed -->
+                        </tr>
+                        <tr *ngFor="let person of inData">
+                          <td>{{ person.Name }}</td>
+                          <td>{{ person.Time | date:'HH:mm':'UTC' }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                  </div>
+                  <div class="col-6">
+                    <table class="table table-striped rounded">
+                      <tbody>
+                        <tr>
+                          <th style="background-color: orange;">Name</th>
+                          <th style="background-color: orange;">Time</th>
+                          <!-- Add more columns if needed -->
+                        </tr>
+                        <tr *ngFor="let person of outData">
+                          <td>{{ person.Name }}</td>
+                          <td>{{ person.Time | date:'HH:mm':'UTC'}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
+
               </div>
 
             </div>
 
           </div>
 
+          <div class="mt-0 p-2 bg-white text-center " style="display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        /* flex-direction: column; */
+        align-items: center;">
+            <p>Powered by:</p>
+            <img src="assets/img/Picture10.png" alt="" style="mix-blend-mode:multiply">
+
+          </div>
+
         </div>
-      </div>
 
-      <div class="right-sidebar col-md-3" style="    padding-right: 0px;
-      margin-right: -130px;">
-
-        <div *ngFor="let functTypeKey of getFunctTypeKeys().slice(5)">
-          <!-- <div class="row">
+        <div class="right-sidebar col-md-3" >
+          <div *ngFor="let functTypeKey of getFunctTypeKeys().slice(5)">
+            <!-- <div class="row">
             <div class="totals row align-items-center col-md-6" (click)="openTablePopup(functTypeKey)">
               <div>
                 <img src="assets/img/{{ functTypeKey }}.png">
@@ -207,35 +227,30 @@
             </div>
 
           </div> -->
-          
-          <div class="totals row align-items-center"  style="padding: 5px;" (click)="openTablePopup(functTypeKey)">
-            <div class="total col-md-4 text-center">
-              <img src="assets/img/{{ functTypeKey }}.png">
-              <p class="total-name "><b> {{functTypeKey}} </b></p>
-            </div>
-            <div class="col-md-4 d-flex justify-content-center align-items-center"
-              style="width: 110px; height: 110px; background-image: url('assets/img/arrow-cricle.png'); background-size: cover; background-position: center;">
-              <div class="text-center">
-                <h1 style="font-size: 20px;margin-left: -4px;margin-top: 15px;">{{functAllCount[functTypeKey]}}</h1>
+
+            <div class="totals row align-items-center" style="padding: 0px; width: 240px;" (click)="openTablePopup(functTypeKey)">
+              <div class="col-md-3 text-center" style="padding-right: 70px;">
+                <img src="assets/img/{{ functTypeKey }}.png">
+                <p><b> {{functTypeKey}} </b></p>
+              </div>
+              <div class="col-md-3 d-flex justify-content-center align-items-center"
+                style="width: 90px; height: 90px; background-image: url('assets/img/arrow-cricle.png'); background-size: cover; background-position: center;">
+                <div class="text-center">
+                  <h1 style="font-size: 20px;margin-left: -4px;margin-top: 15px;">{{functAllCount[functTypeKey]}}</h1>
+                </div>
               </div>
             </div>
+
           </div>
 
+
         </div>
-
-
       </div>
     </div>
-  </div>
-  <div class="mt-0 p-2 bg-white text-center " style="display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  flex-direction: column; margin-left: 200px;
-  align-items: center;">
-    <p>Powered by</p>
-    <img src="assets/img/Picture10.png" alt="" style="mix-blend-mode:multiply">
 
   </div>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
